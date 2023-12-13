@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 29px;
+  background: #ffffff;
+}
+
+.header__title{
+  font-weight: 700;
+  font-size: 30px;
+  color: #357EEC;
+  margin: 0;
+}
+
+.header__info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.profile__info{
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+}

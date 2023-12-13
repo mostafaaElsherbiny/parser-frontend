@@ -1,0 +1,31 @@
+.wrapper{
+  background: #ffffff;
+  padding: 19px 22px;
+  margin: 14px 0 22px;
+  border-radius: 6px;
+}
+
+.articles__filters{
+  margin: 14px 0 22px;
+}
+
+.articles__filters--top{
+  display: flex;
+  align-items: center;
+}
+
+.articles__filter-form{
+  margin-left: 15px;
+}
+
+.article-filter__btn{
+display: flex;
+  align-items: center;
+}
+.article-filter__btn svg{
+  margin-right: 10px;
+}
+
+.article-filter__btn:first-child{
+  margin-right: 10px;
+}
