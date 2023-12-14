@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import "./register-form.scss";
+import "./form.scss";
 import { Button, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
-import { authApi, registerApi } from "../../../../api/auth/auth";
-import { setToken } from "../../../../utils/authLocalStorage";
+import { registerApi } from "@/api/auth/auth";
+import { setToken } from "@/utils/authLocalStorage";
+import onFinishFailed from "@/utils/onFinishFailed";
 
 const { Item } = Form;
 
@@ -31,36 +32,9 @@ const RegisterForm: React.FC<props> = () => {
           navigate("/");
         }
       })
-      .catch((e) => {
-        onFinishFailed(e);
+      .catch((e: any) => {
+        onFinishFailed(e, setError);
       });
-  };
-
-  interface response {
-    data: {
-      message: string;
-      errors: {
-        property: string;
-        message: string;
-      }[];
-    };
-  }
-  const onFinishFailed = (e: { response: response }) => {
-    if (e.response && e.response.data) {
-      if (e.response.data.message) {
-        setError(e.response.data.message);
-      }
-      if (e.response.data.errors) {
-        setError(
-          e.response.data.errors
-            .map(
-              (item: { property: string; message: string }) =>
-                `(${item.property})${item.message}`
-            )
-            .join(", ")
-        );
-      }
-    }
   };
 
   return (
@@ -106,7 +80,7 @@ const RegisterForm: React.FC<props> = () => {
           },
         ]}
       >
-        <Input.Password  size={"large"} />
+        <Input.Password size={"large"} />
       </Item>
       <Item>
         <Button type="primary" htmlType="submit">

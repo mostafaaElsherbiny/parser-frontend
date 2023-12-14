@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Table } from "antd";
 import { useSearchParams } from "react-router-dom";
-import { serializeQuery } from "../../../../utils/serializeQuery";
-import Pagination from "../../../../shared/pagination/pagination";
-import { useArticle } from "../../../../hooks/article/article";
+import { serializeQuery } from "@/utils/serializeQuery";
+import Pagination from "@/shared/pagination/pagination";
+import { useArticle } from "@/hooks/article/article";
 import "./article-table.scss";
-import ArticleFilters from "../article-filters/article-filters";
-interface props {}
 
-const ArticleTable: React.FC<props> = () => {
+const ArticleTable = () => {
   const [searchParams, setSearchParams] = useSearchParams({
     page: "1",
     count: "10",
@@ -31,7 +29,7 @@ const ArticleTable: React.FC<props> = () => {
   const deleted = searchParams.get("deleted");
   const active = searchParams.get("active");
 
-  const { data, isLoading, isError, error, isRefetching, refetch } = useArticle(
+  const { data, isLoading, refetch } = useArticle(
     pageQuery,
     count,
     order_column ? order_column : undefined,
@@ -56,7 +54,7 @@ const ArticleTable: React.FC<props> = () => {
     }
   }, [data]);
 
-  const handleTableChange = (pagination: any, filters: any, sorter: any) => {
+  const handleTableChange = (sorter: any) => {
     const sorterOrder = `${sorter.field},${
       sorter.order === "ascend" ? "asc" : "desc"
     }`;
@@ -87,7 +85,7 @@ const ArticleTable: React.FC<props> = () => {
       dataIndex: "title",
       title: "title",
       sorter: true,
-      render: (text: string, record: any) => {
+      render: (text: string) => {
         if (text) {
           return text.slice(0, 20) + "...";
         }
@@ -98,7 +96,7 @@ const ArticleTable: React.FC<props> = () => {
       dataIndex: "description",
       title: "description",
       sorter: true,
-      render: (text: string, record: any) => {
+      render: (text: string) => {
         if (text) {
           return text.slice(0, 20) + "...";
         }
@@ -115,9 +113,9 @@ const ArticleTable: React.FC<props> = () => {
       dataIndex: "source",
       title: "source",
       sorter: true,
-      render: (text: string, record: any) => {
+      render: (text: string) => {
         if (text) {
-          return text.replace(/_/g, " "); 
+          return text.replace(/_/g, " ");
         }
       },
     },
@@ -126,7 +124,7 @@ const ArticleTable: React.FC<props> = () => {
       dataIndex: "created_at",
       title: "created_at",
       sorter: true,
-      render: (text: string, record: any) => {
+      render: (text: string) => {
         if (text) {
           return new Date(text).toLocaleDateString();
         }
@@ -138,7 +136,7 @@ const ArticleTable: React.FC<props> = () => {
     <>
       <Table
         columns={columns}
-        onChange={handleTableChange}
+        onChange={(sorter) => handleTableChange(sorter)}
         dataSource={data?.data}
         loading={isLoading}
         rowKey={"id"}

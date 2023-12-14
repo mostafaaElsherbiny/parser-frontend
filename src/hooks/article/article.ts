@@ -1,6 +1,6 @@
 import { useQuery, UseQueryOptions } from "react-query";
-import { getApi } from "../../api/article/article";
-import { IArticleData } from "../../interfaces/article";
+import { getApi } from "@/api/article/article";
+import { IArticleData } from "@/interfaces/article";
 import { AxiosResponse } from "axios";
 
 export const ARTICLES_KEY = "articles-key";

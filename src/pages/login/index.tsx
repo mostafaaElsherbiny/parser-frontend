@@ -1,13 +1,13 @@
 import React from "react";
-import "./login-page.scss";
+import "./login.scss";
 import { Card, Col, Row, Typography } from "antd";
-import LoginForm from "./components/login-form/login-form";
+import LoginForm from "./components/form";
 
 const { Title } = Typography;
 
 interface props {}
 
-const LoginPage: React.FC<props> = () => {
+const Login: React.FC<props> = () => {
   return (
     <section className={"login"}>
       <div className={"container"}>
@@ -28,4 +28,4 @@ const LoginPage: React.FC<props> = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

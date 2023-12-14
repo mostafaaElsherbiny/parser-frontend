@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import "./login-form.scss";
+import "./login.scss";
 import { Button, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { authApi } from "../../../../api/auth/auth";
 import { setToken } from "../../../../utils/authLocalStorage";
+import onFinishFailed from "@/utils/onFinishFailed";
 
 const { Item } = Form;
 
@@ -16,41 +17,15 @@ const LoginForm: React.FC<props> = () => {
   const onFinish = (values: { email: string; password: string }) => {
     authApi({ email: values.email, password: values.password })
       .then((response) => {
-        if (response && response.data && response.data.access_token) {
-          setToken(response.data.access_token);
+        const { data } = response;
+        if (data && data.access_token) {
+          setToken(data.access_token);
           navigate("/");
         }
       })
-      .catch((e) => {
-        onFinishFailed(e);
+      .catch((e: any) => {
+        onFinishFailed(e, setError);
       });
-  };
-
-  interface response {
-    data: {
-      message: string;
-      errors: {
-        property: string;
-        message: string;
-      }[];
-    };
-  }
-  const onFinishFailed = (e: { response: response }) => {
-    if (e.response && e.response.data) {
-      if (e.response.data.message) {
-        setError(e.response.data.message);
-      }
-      if (e.response.data.errors) {
-        setError(
-          e.response.data.errors
-            .map(
-              (item: { property: string; message: string }) =>
-                `(${item.property})${item.message}`
-            )
-            .join(", ")
-        );
-      }
-    }
   };
 
   return (
@@ -84,9 +59,7 @@ const LoginForm: React.FC<props> = () => {
       </Item>
       <Item>
         <Link type="primary" to={"/register"}>
-          <Button type="primary">
-            register now!
-          </Button>
+          <Button type="primary">register now!</Button>
         </Link>
       </Item>
       <Item>

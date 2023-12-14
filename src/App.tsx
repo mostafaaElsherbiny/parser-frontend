@@ -3,8 +3,8 @@ import "antd/dist/reset.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LayoutMain from "./layout/layout";
 import { routes } from "./routes";
-import LoginPage from "./pages/login-page/login-page";
-import RegisterPage from "./pages/register-page/register-page";
+import LoginPage from "./pages/login";
+import RegisterPage from "./pages/register";
 
 function App() {
   return (

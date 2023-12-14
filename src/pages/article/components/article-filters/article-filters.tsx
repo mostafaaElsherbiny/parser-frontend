@@ -7,6 +7,7 @@ import ItemsAtPage from "../../../../shared/items-at-page/items-at-page";
 import { useSearchParams } from "react-router-dom";
 import { serializeQuery } from "../../../../utils/serializeQuery";
 import { getCategoriesApi } from "../../../../api/article/article";
+import filterIcon from "@assets/icons/filters.svg";
 
 const { Text } = Typography;
 
@@ -74,18 +75,7 @@ const ArticleFilters: React.FC<props> = () => {
         <Row justify={"space-between"} align={"middle"}>
           <Col>
             <div className={"articles__filters--top"}>
-              <svg
-                width="26"
-                height="21"
-                viewBox="0 0 26 21"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24.9962 0.351502C24.909 0.13905 24.7013 0 24.4729 0L0.564462 0.000189183C0.334982 0.000189183 0.128206 0.139239 0.042328 0.351692C-0.0446976 0.564144 0.00505881 0.80592 0.167754 0.966329L9.69413 10.3663V20.4351C9.69413 20.6362 9.80139 20.8227 9.97544 20.9255C10.0636 20.9764 10.1608 21 10.259 21C10.3551 21 10.4522 20.9764 10.5392 20.9277L15.0594 18.3513C15.2359 18.2508 15.3443 18.0633 15.3443 17.8598V10.3665L24.8711 0.968019C25.0325 0.806458 25.0823 0.563543 24.9964 0.352026L24.9962 0.351502Z"
-                  fill="#357EEC"
-                />
-              </svg>
+              <img src={filterIcon} alt="" />
               <Text>Filter</Text>
             </div>
           </Col>
