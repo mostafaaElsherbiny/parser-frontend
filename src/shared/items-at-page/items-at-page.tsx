@@ -1,8 +1,7 @@
 import React from "react";
 import { Row, Select, Typography } from "antd";
-import { useQuery, useQueryClient, UseQueryOptions } from "react-query";
 import { useSearchParams } from "react-router-dom";
-import { serializeQuery } from "../../utils/serializeQuery";
+import { serializeQuery } from "@/utils/serializeQuery";
 
 const { Text } = Typography;
 

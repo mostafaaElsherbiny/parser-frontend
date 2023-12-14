@@ -1,8 +1,7 @@
 import React from "react";
-import { Pagination as AntdPagination, Spin } from "antd";
+import { Pagination as AntdPagination } from "antd";
 import { useSearchParams } from "react-router-dom";
-import { serializeQuery } from "../../utils/serializeQuery";
-import { getQueryParams } from "../../utils/getQueryParams";
+import { serializeQuery } from "@/utils/serializeQuery";
 
 interface props {
   request: () => void;

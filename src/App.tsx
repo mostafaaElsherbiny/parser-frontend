@@ -3,8 +3,8 @@ import "antd/dist/reset.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LayoutMain from "./layout/layout";
 import { routes } from "./routes";
-import LoginPage from "./pages/login";
-import RegisterPage from "./pages/register";
+import Login from "./pages/login";
+import Register from "./pages/register";
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
             <Route key={path} path={path} element={component} />
           ))}
         </Route>
-        <Route path={"/login"} element={<LoginPage />} />
-        <Route path={"/register"} element={<RegisterPage />} />
+        <Route path={"/login"} element={<Login />} />
+        <Route path={"/register"} element={<Register />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,6 +1,6 @@
 import makeRequest from "../makeRequest";
 import { AxiosResponse } from "axios";
-import { IArticleData } from "../../interfaces/article";
+import { IArticleData } from "@/interfaces/article";
 
 const Base = "articles/";
 export function getApi(

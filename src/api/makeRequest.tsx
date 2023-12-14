@@ -1,7 +1,7 @@
 import axios from "axios";
-import { HOST } from "../constants/host";
-import { getToken } from "../utils/authLocalStorage";
-import { TOKEN } from "../constants/token";
+import { HOST } from "@/constants/host";
+import { getToken } from "@/utils/authLocalStorage";
+import { TOKEN } from "@/constants/token";
 
 const makeRequest = axios.create({
   baseURL: HOST + "/",
