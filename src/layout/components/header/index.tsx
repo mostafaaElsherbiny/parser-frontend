@@ -1,12 +1,9 @@
-import React from "react";
 import "./header.scss";
 import { useLocation } from "react-router-dom";
 import SearchAutoComplete from "./components/search-auto-complete/search-auto-complete";
 import Profile from "./components/profile/profile";
 
-interface props {}
-
-const Header: React.FC<props> = () => {
+const Header = () => {
   const { pathname } = useLocation();
 
   const titleHandler = () => {

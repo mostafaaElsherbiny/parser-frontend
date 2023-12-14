@@ -1,4 +1,3 @@
-import React from "react";
 import { Pagination as AntdPagination } from "antd";
 import { useSearchParams } from "react-router-dom";
 import { serializeQuery } from "@/utils/serializeQuery";
@@ -8,7 +7,7 @@ interface props {
   totalCount: string;
 }
 
-const Pagination: React.FC<props> = ({ request, totalCount }) => {
+const Pagination = ({ request, totalCount }: props) => {
   const [searchParams, setSearchParams] = useSearchParams({
     page: "1",
     count: "10",

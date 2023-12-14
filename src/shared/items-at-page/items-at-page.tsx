@@ -5,7 +5,6 @@ import { serializeQuery } from "@/utils/serializeQuery";
 
 const { Text } = Typography;
 
-interface props {}
 
 const options = [
   { value: "10", label: "10" },
@@ -14,8 +13,7 @@ const options = [
   { value: "100", label: "100" },
 ];
 
-interface props {}
-const ItemsAtPage: React.FC<props> = () => {
+const ItemsAtPage = () => {
   const [searchParams, setSearchParams] = useSearchParams({
     page: "1",
     count: "10",

@@ -1,13 +1,10 @@
-import React from "react";
 import "./register.scss";
 import { Card, Col, Row, Typography } from "antd";
 import RegisterForm from "./components/form/form";
 
 const { Title } = Typography;
 
-interface props {}
-
-const RegisterPage: React.FC<props> = () => {
+const RegisterPage = () => {
   return (
     <section className={"register"}>
       <div className={"container"}>

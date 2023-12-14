@@ -5,9 +5,8 @@ import LoginForm from "./components/form";
 
 const { Title } = Typography;
 
-interface props {}
 
-const Login: React.FC<props> = () => {
+const Login = () => {
   return (
     <section className={"login"}>
       <div className={"container"}>

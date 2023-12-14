@@ -1,4 +1,3 @@
-import React from "react";
 import "./search.scss";
 import { Input } from "antd";
 
@@ -8,7 +7,7 @@ interface props {
   onSearchBox: (value: string) => void;
 }
 
-const ArticlesSearch: React.FC<props> = ({ onSearchBox }) => {
+const ArticlesSearch = ({ onSearchBox }: props) => {
   const onSearch = (value: string) => {
     onSearchBox(value);
   };

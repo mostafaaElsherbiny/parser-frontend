@@ -1,5 +1,4 @@
-import makeRequest from "../makeRequest";
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import { HOST } from "../../constants/host";
 // import {IUser} from "../../interfaces/auth";
 
@@ -20,10 +19,3 @@ export function registerApi(data: {
     baseURL: HOST,
   });
 }
-// export function getUserInfo() {
-//     return makeRequest.get('/user/info').then((response: AxiosResponse<{data: IUser}>) => response.data.data)
-// }
-
-// export function passwordResetApi (data: {password: string, password_confirmation:string}) {
-//     return makeRequest.post('/change-password', data)
-// }

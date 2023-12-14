@@ -3,8 +3,8 @@ import { Table } from "antd";
 import { useSearchParams } from "react-router-dom";
 import { serializeQuery } from "@/utils/serializeQuery";
 import Pagination from "@/shared/pagination/pagination";
-import { useArticle } from "@/hooks/article/article";
-import "./article-table.scss";
+import { useArticle } from "@/hooks/article";
+import "./table.scss";
 
 const ArticleTable = () => {
   const [searchParams, setSearchParams] = useSearchParams({

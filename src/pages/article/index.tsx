@@ -1,10 +1,7 @@
-import React from "react";
 import ArticleFilters from "./components/filters/filters";
-import ArticleTable from "./components/table/article-table";
+import ArticleTable from "./components/table/table";
 
-interface props {}
-
-const ArticleList: React.FC<props> = () => {
+const ArticleList = () => {
   return (
     <>
       <ArticleFilters />

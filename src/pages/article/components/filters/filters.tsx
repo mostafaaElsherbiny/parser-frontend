@@ -6,13 +6,12 @@ import ArticlesSearch from "./components/search/article-search";
 import ItemsAtPage from "../../../../shared/items-at-page/items-at-page";
 import { useSearchParams } from "react-router-dom";
 import { serializeQuery } from "../../../../utils/serializeQuery";
-import { getCategoriesApi } from "../../../../api/article/article";
+import { getCategoriesApi } from "../../../../api/article";
 import filterIcon from "@assets/icons/filters.svg";
 
 const { Text } = Typography;
 
-interface props {}
-const ArticleFilters: React.FC<props> = () => {
+const ArticleFilters = () => {
   const [searchParams, setSearchParams] = useSearchParams({});
 
   const onChange = (value: string, filter_by: string) => {

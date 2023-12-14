@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import "./login.scss";
 import { Button, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
-import { authApi } from "../../../../api/auth/auth";
+import { authApi } from "../../../../api/auth";
 import { setToken } from "../../../../utils/authLocalStorage";
 import onFinishFailed from "@/utils/onFinishFailed";
 
 const { Item } = Form;
 
-interface props {}
-const LoginForm: React.FC<props> = () => {
+const LoginForm = () => {
   const navigate = useNavigate();
 
   const [error, setError] = useState<string>("");

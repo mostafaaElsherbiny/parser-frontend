@@ -1,12 +1,10 @@
-import React, { useState } from "react";
 import dayjs, { Dayjs } from "dayjs";
 import { DatePicker } from "antd";
 
 const { RangePicker } = DatePicker;
 
-interface props {}
 
-const ArticlesDatepicker: React.FC<props> = () => {
+const ArticlesDatepicker = () => {
   const rangePresets: {
     label: string;
     value: [Dayjs, Dayjs];
