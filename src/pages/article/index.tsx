@@ -1,6 +1,6 @@
 import React from "react";
-import ArticleFilters from "./components/article-filters/article-filters";
-import ArticleTable from "./components/article-table/article-table";
+import ArticleFilters from "./components/filters/filters";
+import ArticleTable from "./components/table/article-table";
 
 interface props {}
 

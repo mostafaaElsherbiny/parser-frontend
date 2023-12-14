@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
-import "./article-filters.scss";
+import "./filters.scss";
 import { Card, Col, Row, Select, Typography } from "antd";
-import ArticlesDatepicker from "./components/articles-datepicker";
-import ArticlesSearch from "./components/articles-search/article-search";
+import ArticlesDatepicker from "./components/datepicker";
+import ArticlesSearch from "./components/search/article-search";
 import ItemsAtPage from "../../../../shared/items-at-page/items-at-page";
 import { useSearchParams } from "react-router-dom";
 import { serializeQuery } from "../../../../utils/serializeQuery";

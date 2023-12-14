@@ -1,6 +1,5 @@
-import React, { ReactElement } from "react";
-import ArticleList from "./pages/article/article-list";
-import RegisterPage from "./pages/register";
+import { ReactElement } from "react";
+import ArticleList from "./pages/article";
 interface IRoute {
   path: string;
   component: ReactElement | any;
